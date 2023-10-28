@@ -1,15 +1,15 @@
 require("dotenv").config();
 const bcrypt = require("bcrypt");
-const UsuariosModel = require("../models/Usuarios");
+const RealStateModel = require("../models/realstate");
 
-class AuthService {
+class AuthRealStateService {
   async hasValidCredentials(email, password) {
     try {
       const hashedPassword = await bcrypt.hash(password, process.env.SALT);
-      
-      const user = await UsuariosModel.findOne({ email });
 
-      if (user && hashedPassword === user.password) {
+      const realState = await RealStateModel.findOne({ email });
+
+      if (realState && hashedPassword === realState.password) {
         return true;
       }
 
@@ -21,4 +21,4 @@ class AuthService {
   }
 }
 
-module.exports = new AuthService();
+module.exports = new AuthRealStateService();

@@ -15,8 +15,9 @@ app.get("/", (req, res) => {
     res.status(200).send("Connected to the project");
 });
 
-// app.use("/api/contactos", require('./src/routes/contactos.routes'));
-// app.use("/api/usuarios", require('./src/routes/usuarios.routes'));
+app.use("/api/users", require('./src/routes/users.routes'));
+app.use("/api/realState", require('./src/routes/realState.routes'));
+app.use("/api/properties", require('./src/routes/properties.routes'));
 
 app.listen(process.env.PORT, () => {
     console.log('Server running on port: ' + process.env.PORT);

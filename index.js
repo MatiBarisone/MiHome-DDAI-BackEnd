@@ -20,13 +20,8 @@ app.use("/api/users", require('./src/routes/users.routes'));
 app.use("/api/realState", require('./src/routes/realState.routes'));
 app.use("/api/properties", require('./src/routes/properties.routes'));
 
-app.get("/", (req, res) =>{
-    const htmlResponse = 'Server running on port: ' + port;
-    res.send(htmlResponse)
-})
-
-// app.listen(port, () => {
-//     console.log('Server running on port: ' + port);
-// });
+app.listen(port, () => {
+    console.log('Server running on port: ' + port);
+});
 
 module.exports = app;

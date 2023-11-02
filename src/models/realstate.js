@@ -5,6 +5,7 @@ const RealStateSchema = new mongoose.Schema({
     email: String,
     password: String,
     profilePicUrl: String,
+    rating: String,
 });
 
 const RealState = mongoose.model('RealState', RealStateSchema);

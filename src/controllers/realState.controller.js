@@ -103,13 +103,15 @@ class RealStateController {
       const email = req.body.email;
       const password = req.body.password;
       const profilePicUrl = req.body.profilePicUrl;
+      const rating = req.body.rating;
       const modifiedProduct = await RealStateService.updateRealState(
         req.params.id,
         {
           name,
           email,
           password,
-          profilePicUrl
+          profilePicUrl,
+          rating
         }
       );
 

@@ -25,6 +25,7 @@ const PropertiesSchema = new mongoose.Schema({
     propertyPriceRent: String,          //  If this is a Sales, the Rent and the Expenses 
     propertyExpenses: String,           //  are 0 or Null. Same goes on line 20.       
     propertyPriceSale: String,          //====================================
+    isDolar: Boolean,
 
     //Property Details
     propertyEnvironment: String,
@@ -42,6 +43,7 @@ const PropertiesSchema = new mongoose.Schema({
     propertyUncoveredM2: String,
     propertyAntiquity: String,
     propertyOrientation: String,
+    isFront: Boolean,
 
     //Amenities Details
     amenities: [String],

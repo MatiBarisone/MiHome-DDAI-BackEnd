@@ -100,6 +100,7 @@ class PropertyController {
             const propertyPriceRent = req.body.propertyPriceRent;
             const propertyExpenses = req.body.propertyExpenses;
             const propertyPriceSale = req.body.propertyPriceSale;
+            const isDolar = req.body.isDolar;
 
             //Property Details
             const propertyEnvironment = req.body.propertyEnvironment;
@@ -117,6 +118,7 @@ class PropertyController {
             const propertyUncoveredM2 = req.body.propertyUncoveredM2;
             const propertyAntiquity = req.body.propertyAntiquity;
             const propertyOrientation = req.body.propertyOrientation;
+            const isFront = req.body.isFront;
 
             //Amenities Details
             const amenities = req.body.amenities;
@@ -148,6 +150,7 @@ class PropertyController {
                     propertyPriceRent,
                     propertyExpenses,
                     propertyPriceSale,
+                    isDolar,
 
                     //Property Details
                     propertyEnvironment,
@@ -165,6 +168,7 @@ class PropertyController {
                     propertyUncoveredM2,
                     propertyAntiquity,
                     propertyOrientation,
+                    isFront,
 
                     //Amenities Details
                     amenities,

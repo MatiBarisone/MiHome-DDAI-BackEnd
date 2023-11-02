@@ -35,10 +35,7 @@ router.post(                                                //LOGIN REALSTATE
 //  EDIT or DELETE their user info, that's why we need the tokken!
 //=======================================================================
 
-router.put('/:id', [
-  check('jwt').not().isEmpty(),
-  checkFields
-], jwtValidator, RealStateController.updateRealState)               //PUT REALSTATE 
+router.put('/:id', RealStateController.updateRealState)               //PUT REALSTATE 
 
 
 router.delete('/:id', [

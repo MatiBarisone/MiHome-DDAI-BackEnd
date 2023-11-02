@@ -26,7 +26,7 @@ class PropertyController {
 
     async getPropertiesOfRealstate(req, res) {
         try {
-            const { idRealstate } = req.body;
+            const { idRealstate } = req.params;
             let properties = await PropertyService.getPropertiesOfRealstate(idRealstate);
             return res.status(200).json(properties);
         } catch (err) {

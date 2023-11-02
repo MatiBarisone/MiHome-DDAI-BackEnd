@@ -28,7 +28,7 @@ class RealStateController {
 
   async getRealState(req, res) {
     try {
-      const { email } = req.body;
+      const { email } = req.params;
       const realState = await RealStateService.getRealStateByEmail(email);
       return res.status(200).json(realState);
     } catch (err) {

@@ -8,7 +8,7 @@ const router = Router();
 
 router.get("/", UsersController.getUsers);                  //GET USERS
 
-router.get("/user", UsersController.getUser);               //GET USER
+router.get("/user/:email", UsersController.getUser);               //GET USER
 
 router.post(                                                //POST USERS
   "/",

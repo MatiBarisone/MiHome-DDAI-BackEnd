@@ -8,11 +8,7 @@ router.get("/", PropertiesController.getProperties);        //GET PROPERTIES
 
 
 router.get(                                                 //GET PROPERTIES
-    "/ofRealstate",
-    [
-        check("idRealstate").not().isEmpty(),
-    ],
-    PropertiesController.getPropertiesOfRealstate
+    "/ofRealstate/:idRealstate",PropertiesController.getPropertiesOfRealstate
 );
 
 //===== Location - TODO =====

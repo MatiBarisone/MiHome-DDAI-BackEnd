@@ -66,9 +66,7 @@ class UsersController {
 
         const user = await UsersService.getUserByEmail(email);
 
-        const token = jwt.sign(user.toJSON(), process.env.PRIVATE_KEY, {
-          expiresIn: "1d",
-        });
+        const token = jwt.sign(user.toJSON(), process.env.PRIVATE_KEY);
 
         return res.status(200).json({
           status: 200,

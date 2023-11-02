@@ -8,7 +8,7 @@ const router = Router();
 
 router.get("/", RealStateController.getRealStates);         //GET REALSTATES
 
-router.get("/realstate", RealStateController.getRealState); //GET REALSTATE
+router.get("/realstate/:email", RealStateController.getRealState); //GET REALSTATE
 
 router.post(                                                //POST REALSTATE
   "/",

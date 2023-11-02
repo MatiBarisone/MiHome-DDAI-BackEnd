@@ -66,9 +66,7 @@ class RealStateController {
 
         const realState = await RealStateService.getRealStateByEmail(email);
 
-        const token = jwt.sign(realState.toJSON(), process.env.PRIVATE_KEY, {
-          expiresIn: "1d",
-        });
+        const token = jwt.sign(realState.toJSON(), process.env.PRIVATE_KEY);
 
         return res.status(200).json({
           status: 200,

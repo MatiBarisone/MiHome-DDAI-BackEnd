@@ -3,6 +3,7 @@ require('dotenv').config();
 const jwt = require("jsonwebtoken");
 const UsersService = require("../services/users.service");
 const AuthUserService = require('../services/authUsers.service');
+const bcrypt = require('bcrypt');
 
 class UsersController {
 
@@ -100,7 +101,7 @@ class UsersController {
       const name = req.body.name;
       const lastname = req.body.lastname;
       const email = req.body.email;
-      const password = req.body.password;
+      const password = bcrypt.hashSync(req.body.password, process.env.SALT);
       const profilePicUrl = req.body.profilePicUrl;
       const modifiedProduct = await UsersService.updateUsers(
         req.params.id,

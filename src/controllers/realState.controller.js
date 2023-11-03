@@ -3,6 +3,7 @@ require('dotenv').config();
 const jwt = require("jsonwebtoken");
 const RealStateService = require("../services/realState.service");
 const AuthRealStateService = require('../services/authRealState.service');
+const bcrypt = require('bcrypt');
 
 class RealStateController {
 
@@ -99,7 +100,7 @@ class RealStateController {
 
       const name = req.body.name;
       const email = req.body.email;
-      const password = req.body.password;
+      const password = bcrypt.hashSync(req.body.password, process.env.SALT);
       const profilePicUrl = req.body.profilePicUrl;
       const rating = req.body.rating;
       const modifiedProduct = await RealStateService.updateRealState(

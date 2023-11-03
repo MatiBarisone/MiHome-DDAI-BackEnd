@@ -97,10 +97,19 @@ class RealStateController {
           .status(404)
           .json({ method: "updateProduct", message: "Not Found" });
       }
+  
+      let newPassword = "0";
+
+      if (req.body.password != realState.password ){
+        newPassword = bcrypt.hashSync(req.body.password, process.env.SALT);
+      }
+      else{
+        newPassword = realState.password;
+      }
 
       const name = req.body.name;
       const email = req.body.email;
-      const password = bcrypt.hashSync(req.body.password, process.env.SALT);
+      const password = newPassword;
       const profilePicUrl = req.body.profilePicUrl;
       const rating = req.body.rating;
       const modifiedProduct = await RealStateService.updateRealState(

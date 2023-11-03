@@ -98,10 +98,19 @@ class UsersController {
           .json({ method: "updateProduct", message: "Not Found" });
       }
 
+      let newPassword = "0";
+
+      if (req.body.password != user.password ){
+        newPassword = bcrypt.hashSync(req.body.password, process.env.SALT);
+      }
+      else{
+        newPassword = user.password;
+      }
+
       const name = req.body.name;
       const lastname = req.body.lastname;
       const email = req.body.email;
-      const password = bcrypt.hashSync(req.body.password, process.env.SALT);
+      const password = newPassword;
       const profilePicUrl = req.body.profilePicUrl;
       const modifiedProduct = await UsersService.updateUsers(
         req.params.id,

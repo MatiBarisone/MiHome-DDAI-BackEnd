@@ -9,4 +9,13 @@ Este es el BackEnd utilizado por el Grupo 15 en el TPO de "Desarrollo de aplicac
 
 
 ## Integrantes:
+- Ruibal Palacio Francisco
+- Barisone Matias Nahuel
+- Yuan Matias Fernando
+- Ansede Guido Nicolas
+- Andrigo Mariano Ezequiel
 
+## Instalación
+Para poder realizar la instalación solamente necesitamos correr el comando:
+`npm install`
+el cual intalará todas las dependecias

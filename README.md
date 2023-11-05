@@ -16,7 +16,6 @@ Este es el BackEnd utilizado por el Grupo 15 en el TPO de "Desarrollo de aplicac
 - Andrigo Mariano Ezequiel
 
 ## Instalación
-Para poder realizar la instalación solamente necesitamos correr el comando:
+Para poder realizar la instalación solamente necesitaremos escribir el siguiente comando en la terminal:
 - `npm install`
 
-El cual intalará todas las dependecias

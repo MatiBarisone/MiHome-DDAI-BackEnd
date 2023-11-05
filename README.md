@@ -27,4 +27,4 @@ Esto inicializará nuestro BackEnd generando un mensaje en la consola que dice:
 - `Server running on port: 8080`
 - `Date Base online :)`
 
-Cuando vea este mensaje significará que la conexion con la base de datos se a completado y puede utilizar el puerto "[http:](localhost:8080)http://localhost:8080/" para llamar a las request que desee.
+Cuando vea este mensaje significará que la conexion con la base de datos se a completado y puede utilizar el puerto "[http:]([localhost:8080])" para llamar a las request que desee.

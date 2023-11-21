@@ -6,6 +6,7 @@ const UsersSchema = new mongoose.Schema({
     email: String,
     password: String,
     profilePicUrl: String,
+    favoriteProperties: [String],
 });
 
 const Users = mongoose.model('Users', UsersSchema);

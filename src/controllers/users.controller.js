@@ -112,6 +112,8 @@ class UsersController {
       const email = req.body.email;
       const password = newPassword;
       const profilePicUrl = req.body.profilePicUrl;
+      const favoriteProperties = req.body.favoriteProperties;
+
       const modifiedProduct = await UsersService.updateUsers(
         req.params.id,
         { 
@@ -119,7 +121,8 @@ class UsersController {
           lastname,
           email,
           password,
-          profilePicUrl
+          profilePicUrl,
+          favoriteProperties
         }
       );
       return res.status(200).json(modifiedProduct);

@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", require('./src/routes/users.routes'));
 app.use("/api/realState", require('./src/routes/realState.routes'));
 app.use("/api/properties", require('./src/routes/properties.routes'));
+app.use("/api/comments", require('./src/routes/comments.routes'));
 
 app.listen(port, () => {
     console.log('Server running on port: ' + port);

@@ -38,10 +38,7 @@ router.post(                                                //LOGIN USERS
 //  EDIT or DELETE their user info, that's why we need the tokken!
 //====================================================================
 
-router.put('/:id', [
-  check('jwt').not().isEmpty(),
-  checkFields
-], jwtValidator, UsersController.updateUsers)               //PUT USERS 
+router.put('/:id', UsersController.updateUsers)               //PUT USERS 
 
 
 router.delete('/:id', [

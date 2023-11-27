@@ -7,9 +7,11 @@ const router = Router();
 
 router.get("/", CommentsController.getComments);                                //GET COMMENTS
 
-router.get("/topCommments/", CommentsController.getTopComments);                   //GET TOP 3 COMMENTS
+router.get("/topCommments/", CommentsController.getTopComments);                //GET TOP 3 COMMENTS
 
 router.get("/:realstateID", CommentsController.getCommentsOfRealstate);         //GET COMMENTS OF REALSTATE
+
+router.get("/rating/:realstateID", CommentsController.getRatingRealstate);      //GET COMMENTS OF REALSTATE
 
 router.post(                                                                    //POST COMMENTS
   "/",

@@ -38,12 +38,22 @@ class PropertyController {
     //===== Location - TODO =====
     async getPropertiesNearLocation(req, res) {
         try {
-            const property = await PropertyService.getPropertiesNearLocation();
-            return res.status(200).json(property);
+            const { latitude, longitude } = req.query;
+
+            if (!latitude || !longitude) {
+                return res.status(400).json({
+                    method: 'getPropertiesNearLocation',
+                    message: 'Latitude and longitude are required parameters.',
+                });
+            }
+
+            const properties = await PropertyService.getPropertiesNearLocation(latitude, longitude);
+
+            return res.status(200).json(properties);
         } catch (err) {
             console.error(err);
             return res.status(500).json({
-                method: "getgetPropertiesNearLocation",
+                method: 'getPropertiesNearLocation',
                 message: err,
             });
         }

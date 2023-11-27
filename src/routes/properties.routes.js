@@ -12,12 +12,8 @@ router.get(                                                 //GET PROPERTIES
 );
 
 //===== Location - TODO =====
-router.get(                                                 //GET PROPERTIES NEAR USER
-    "/nearUser",
-    [
-        check("locationUser").not().isEmpty(),
-    ],
-    PropertiesController.getProperties
+router.get(
+    '/nearUser', PropertiesController.getPropertiesNearLocation
 );
 //===========================
 

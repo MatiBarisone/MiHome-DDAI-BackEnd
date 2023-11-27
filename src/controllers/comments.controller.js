@@ -52,6 +52,42 @@ class CommentsController {
     }
   }
 
+  async getRatingRealstate(req, res) {
+    try {
+      const { realstateID } = req.params;
+      const comments = await CommentsService.getCommentByRealstateID(realstateID);
+
+      if (comments.length === 0) {
+        return res.status(404).json({
+          message: "No comments found for the specified real estate ID.",
+        });
+      }
+
+      let sumRatings = 0;
+
+      for (const comment of comments) {
+        sumRatings += parseFloat(comment.rating);
+      }
+  
+      const averageRating = sumRatings / comments.length;
+
+      const promedio = averageRating.toString();
+      const total = comments.length.toString();
+      
+      return res.status(200).json({
+        promedio,
+        totalComments: total,
+      });
+
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({
+        method: "getCommentByRealstateID",
+        message: err,
+      });
+    }
+  }
+
   async createComment(req, res) {
     try {
       let newComment = await CommentsService.createComment(req.body);

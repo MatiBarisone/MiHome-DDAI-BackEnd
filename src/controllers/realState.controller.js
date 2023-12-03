@@ -41,6 +41,20 @@ class RealStateController {
     }
   }
 
+  async getRealStateID(req, res) {
+    try {
+      const { id } = req.params;
+      const realState = await RealStateService.getRealStateById(id);
+      return res.status(200).json(realState);
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({
+        method: "getRealStateByEmail",
+        message: err,
+      });
+    }
+  }
+
   async createRealState(req, res) {
     try {
       let newRealState = await RealStateService.createRealState(req.body);

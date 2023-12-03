@@ -35,6 +35,28 @@ class PropertyController {
         }
     }
 
+    async getPropertiesByIds(req, res) {
+        try {
+            const { ids } = req.query;
+
+            if (!ids || !Array.isArray(ids)) {
+                return res.status(400).json({
+                    method: 'getPropertiesByIds',
+                    message: 'IDs must be provided as an array in the query parameters.',
+                });
+            }
+
+            const properties = await PropertyService.getPropertiesByIds(ids);
+            return res.status(200).json(properties);
+        } catch (err) {
+            console.error(err);
+            return res.status(500).json({
+                method: 'getPropertiesByIds',
+                message: err,
+            });
+        }
+    }
+
     //===== Location - TODO =====
     async getPropertiesNearLocation(req, res) {
         try {

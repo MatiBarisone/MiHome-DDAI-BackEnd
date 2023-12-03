@@ -11,6 +11,8 @@ router.get(                                                 //GET PROPERTIES
     "/ofRealstate/:idRealstate",PropertiesController.getPropertiesOfRealstate
 );
 
+router.get('/byIds', PropertiesController.getPropertiesByIds);
+
 //===== Location - TODO =====
 router.get(
     '/nearUser', PropertiesController.getPropertiesNearLocation

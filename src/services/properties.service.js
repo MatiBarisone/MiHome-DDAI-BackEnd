@@ -24,7 +24,17 @@ class PropertiesService {
         }
     }
 
-    //===== Location - TODO =====
+    async getPropertiesByIds(ids) {
+        try {
+            const properties = await PropertiesModel.find({ _id: { $in: ids } });
+            return properties;
+        } catch (err) {
+            console.error(err);
+            throw new Error("Error in getPropertiesByIds Service");
+        }
+    }
+
+    //===== Location =====
 
     async geocodeAddress(address, number, location, province, country) {
         try {

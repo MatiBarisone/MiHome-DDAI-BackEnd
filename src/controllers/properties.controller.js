@@ -39,13 +39,6 @@ class PropertyController {
         try {
             const { ids } = req.query;
 
-            if (!ids || !Array.isArray(ids)) {
-                return res.status(400).json({
-                    method: 'getPropertiesByIds',
-                    message: 'IDs must be provided as an array in the query parameters.',
-                });
-            }
-
             const properties = await PropertyService.getPropertiesByIds(ids);
             return res.status(200).json(properties);
         } catch (err) {
